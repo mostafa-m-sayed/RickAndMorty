@@ -48,4 +48,15 @@ final class FilterStatusCollectionCell: UICollectionViewCell {
         contentView.backgroundColor = isSelected ? UIColor.systemBlue : UIColor.clear
         label.textColor = isSelected ? UIColor.white : UIColor.black
     }
+
+    override var accessibilityLabel: String? {
+        get {
+            if contentView.backgroundColor == UIColor.systemBlue {
+                return "cell_blue"
+            } else {
+                return "cell_default"
+            }
+        }
+        set {}
+    }
 }

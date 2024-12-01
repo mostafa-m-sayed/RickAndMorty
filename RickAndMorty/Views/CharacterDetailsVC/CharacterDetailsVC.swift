@@ -15,6 +15,9 @@ final class CharacterDetailsVC: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        
+        // For UITest
+        self.view.accessibilityIdentifier = "CharacterDetailsVC"
     }
     private func setupUI() {
         // Set up SwiftUI view

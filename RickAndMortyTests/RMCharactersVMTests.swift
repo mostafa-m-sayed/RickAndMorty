@@ -10,17 +10,17 @@ import XCTest
 
 class RMCharactersVMTests: XCTestCase {
     var viewModel: RMCharactersVM!
-
+    
     override func setUp() {
         super.setUp()
         viewModel = RMCharactersVM()
     }
-
+    
     override func tearDown() {
         viewModel = nil
         super.tearDown()
     }
-
+    
     func testFetchCharactersSuccess() async {
         // Simulate a successful API call
         await viewModel.fetchCharacters(status: CharacterStatus.alive.rawValue, reset: true)
@@ -34,7 +34,7 @@ class RMCharactersVMTests: XCTestCase {
     
     func testFetchCharactersError() async {
         // Simulate an error condition (e.g., network failure)
-//        viewModel.error = "Test Error"
+        //        viewModel.error = "Test Error"
         
         await viewModel.fetchCharacters(status: "wrongFilter", reset: true)
         
