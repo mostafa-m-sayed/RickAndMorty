@@ -39,11 +39,22 @@
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		069939B02CFC7EC600E84011 /* Exceptions for "RickAndMorty" folder in "Compile Sources" phase from "RickAndMorty" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 069938112CFB100D00E84011 /* Sources */;
+			membershipExceptions = (
+				Resources/MockData/CharactersMock.json,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		069938172CFB100D00E84011 /* RickAndMorty */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				0699383D2CFB100E00E84011 /* Exceptions for "RickAndMorty" folder in "RickAndMorty" target */,
+				069939B02CFC7EC600E84011 /* Exceptions for "RickAndMorty" folder in "Compile Sources" phase from "RickAndMorty" target */,
 			);
 			path = RickAndMorty;
 			sourceTree = "<group>";
