@@ -47,11 +47,17 @@ final class RMCharactersVM: RMCharactersVMProtocol {
         
         guard hasMoreItems, !isLoading else { return }
         currentStatusFilter = status
-        isLoading = true
+        await MainActor.run {
+            isLoading = true
+        }
+        
         do {
             let request = try formRequest(status: status)
             let (data, response) = try await URLSession.shared.data(for: request)
-            isLoading = false
+            await MainActor.run {
+                isLoading = false
+            }
+            print("isLoading set to false")
             guard let httpResponse = response as? HTTPURLResponse,
                   (200...299).contains(httpResponse.statusCode) else {
                 if let message = try extractMessageFromData(data: data) {
@@ -63,9 +69,6 @@ final class RMCharactersVM: RMCharactersVMProtocol {
                 }
             }
             do {
-                if let dataString = String(data: data, encoding: .utf8) {
-                    print("data:", dataString)
-                }
                 let response = try JSONDecoder().decode(RMCharactersResponse.self, from: data)
                 pagesCount = response.info.pages
                 let newCharacters = response.results.map { RMCharacterVM(character: $0) }
