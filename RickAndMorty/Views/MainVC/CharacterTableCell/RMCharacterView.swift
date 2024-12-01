@@ -12,7 +12,7 @@ struct RMCharacterView: View {
     
     var body: some View {
         HStack(spacing: 16) {
-            AsyncImage(url: character.image) { phase in
+            CacheAsyncImage(url: character.image!) { phase in
                 switch phase {
                 case .empty:
                     ProgressView()
@@ -56,6 +56,7 @@ struct RMCharacterView: View {
         )
         .padding(.horizontal)
         .padding(.vertical, 8)
+        .id(character.character.id)
     }
 
     private struct Constants {
