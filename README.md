@@ -20,7 +20,7 @@ Tried multiple solutions including changing the variable in the SwiftUI View to 
 
 It was fixed by adding a unique id to the outer stack, so the view gets reloaded when the cell is dequeued.
 
-Areas of improvement:
+- Areas of improvement (Not done to avoid over-engineering the task):
 
-1- Create a generuc network manager to handle network calls usinf Swift Concurrency and return the corresponding model.
+1- Create a generuc network manager to handle network calls using Swift Concurrency and return the corresponding model.
 2- Move the Network call to a separate service and make it conform to a protocol so we can inject it to the View Model and mock it for testing
